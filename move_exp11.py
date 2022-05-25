@@ -9,15 +9,15 @@ from pathlib import Path
 from statistics import mean
 
 def main():
-    dirPathGen = (Path('..')/'camera_placement_coverage'/'exp11').glob('idF5*')
-    savePath = Path('.')/'exp11'
+    dirPathGen = (Path('..')/'camera_placement_coverage'/'exp12').glob('idF5*')
+    savePath = Path('.')/'exp12'
     savePath.mkdir(parents=True,exist_ok=True)
     for dirPath in dirPathGen:
         print(dirPath.name)
         saveDirPath = (savePath/(dirPath.name))
         saveDirPath.mkdir(parents=True,exist_ok=True)
         copyDir = dirPath/'results'
-        os.system(f'powershell cp -r {copyDir} {saveDirPath}')
+        os.system(f'powershell mv {copyDir} {saveDirPath}')
 
 if __name__ == '__main__':
     main()

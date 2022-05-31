@@ -9,8 +9,8 @@ from pathlib import Path
 from statistics import mean
 
 def main():
-    dirPathGen = (Path('..')/'camera_placement_coverage'/'exp12').glob('idF5*')
-    savePath = Path('.')/'exp12'
+    dirPathGen = (Path('..')/'camera_placement_coverage'/'exp13').glob('idF5_*')
+    savePath = Path('.')/'exp13_coverage'
     savePath.mkdir(parents=True,exist_ok=True)
     for dirPath in dirPathGen:
         print(dirPath.name)
